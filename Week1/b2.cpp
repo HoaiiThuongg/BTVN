@@ -1,23 +1,15 @@
-#include <iostream>
+#include <cmath>
 #include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
 using namespace std;
 
+
 int main() {
-    // Complete the code.
-    int i;
-    long l;
-    char c;
-    float f;
-    double d;
-    
-    scanf("%d %ld %c %f %lf",&i,&l,&c,&f,&d);
-    
-    printf("%d\n",i);
-    printf("%ld\n",l);
-    printf("%c\n",c);
-    printf("%f\n",f);
-    printf("%lf\n",d);
-    
-    
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */  
+    int q,b,c;
+    cin >> q >> b >> c;
+    cout << q+b+c;
     return 0;
 }
