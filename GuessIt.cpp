@@ -12,32 +12,52 @@ int soNgauNhien()
 	return random;
 }
 
-int doanSo()
+void doanSo(int&n)
 {
-	int n;
 	cout << "Ban doan la so may? ";
 	cin >> n;
-	return n;
 }
 
-string ketQua(int n,int randNum)
+bool choiLai()
 {
-	if (n > randNum) { return "Nho hon di ban oi"; }
-	if (n < randNum) { return "Lon hon di ban oi"; }
-	if (n == randNum) { return "Dung roi be oi!"; }
+	while(true)
+	{
+		cout <<"Ban co muon choi la khong: (Y neu co, N neu khong muon) " ;
+		char c;
+		cin >> c;
+		
+		if(c == 'Y' || c == 'y') return true;
+		else if(c == 'N' || c == 'n') return false;
+		else 
+		{
+			cout <<"Ki tu khong hop le"<< endl;
+		}
+	}	
+}
+
+bool ketQua(int n,int randNum,string& s)
+{
+	if (n > randNum) { s = "Nho hon di ban oi"; return false; }
+	if (n < randNum) { s = "Lon hon di ban oi"; return false; }
+	if (n == randNum) { s = "Dung roi ban oi! Chuc mung nhe!"; return true;}
 }
 
 int main()
 {
-	int n;
+	int n;string s;
 	bool isRunning = true;
 	int randNum = soNgauNhien();
 
 	while (isRunning)
 	{
-		n = doanSo();
-		cout << ketQua(n, randNum) << endl;
-		if (n == randNum) isRunning = false;
+		doanSo(n);
+		bool isWin = ketQua(n,randNum,s);
+		cout << s<< endl<<endl;
+		
+		if(isWin)
+		{
+			if(!choiLai()) isRunning = false;
+		}	
 	}
 
 	return 0;
