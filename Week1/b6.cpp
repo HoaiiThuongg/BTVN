@@ -1,29 +1,25 @@
-#include <bits/stdc++.h>
-
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
 using namespace std;
 
-string ltrim(const string &);
-string rtrim(const string &);
-vector<string> split(const string &);
 
-/*
- * Complete the 'plusMinus' function below.
- *
- * The function accepts INTEGER_ARRAY arr as parameter.
- */
-
-void plusMinus(vector<int> arr) {
-    double size = arr.size();
-    double cnt0=0, cntd = 0,cnta = 0;
-    for(int i = 0;i<size;i++)
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
+    int n;
+    cin >> n;
+    int ar[n];
+    for(int i = 0;i<n;i++)
     {
-        if(arr[i] == 0) cnt0++;
-        else if(arr[i]>0) cntd++;
-        else cnta++;
-    }
+        cin >> ar[i];
+    }  
     
-    std::cout << cntd/size << std::endl
-                 <<cnta/size << std::endl
-                 <<cnt0/size << std::endl;
-                 
+    for(int i = n-1;i>=0;i--)
+    {
+        cout << ar[i] << ' ';
+    }  
+    return 0;
 }
+
