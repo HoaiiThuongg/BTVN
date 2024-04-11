@@ -16,12 +16,12 @@ string hackerrankInString(string s) {
     int i = 0;
     while(i<s.length())
     {
-        if(s[i] != 'h' && s[i] != 'a'&&s[i] != 'c'&&s[i] != 'k'&&s[i] != 'e'&&s[i] != 'r'
+       /* if(s[i] != 'h' && s[i] != 'a'&&s[i] != 'c'&&s[i] != 'k'&&s[i] != 'e'&&s[i] != 'r'
             &&s[i] != 'n')
             {
                 i++;
                 continue;
-            }
+            } */
         if(i==s.length() || k == 10) break;
         while(s[i] != h[k] && i!=s.length())
         {
